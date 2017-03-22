@@ -1,7 +1,7 @@
 export default class Errors {
-
   /**
   * Constructor.
+  *
   */
   constructor () {
     this.errors = {}
@@ -9,6 +9,8 @@ export default class Errors {
 
   /**
    * Determine if we have any errors.
+   *
+   * @returns {boolean}
    */
   any () {
     return Object.keys(this.errors).length > 0
@@ -16,22 +18,29 @@ export default class Errors {
 
   /**
    * Determine if we have any errors.
+   *
+   * @returns {boolean}
    */
-  hasErrors() {
-    return any()
+  hasErrors () {
+    return this.any()
   }
-
 
   /**
    * Get all of the raw errors for the collection.
+   *
+   * @returns {{}|*}
    */
-  all() {
+  all () {
     return this.errors
   }
 
-  // API
+  /**
+   * Check if exists error for a current field.
+   *
+   * @param field
+   * @returns {boolean}
+   */
   has (field) {
-    // Undescore | Lodash
     return this.errors.hasOwnProperty(field)
   }
 
@@ -48,14 +57,8 @@ export default class Errors {
   }
 
   /**
-   * Get all of the errors for the collection in a flat array.
-   */
-  flatten() {
-    return _.flatten(_.toArray(this.errors))
-  }
-
-  /**
-   * Record the new errors
+   * Record the new errors.
+   *
    * @param errors
    */
   record (errors) {
@@ -64,15 +67,17 @@ export default class Errors {
 
   /**
    * Set the raw errors for the collection.
+   *
+   * @param errors
    */
-  set(errors) {
+  set (errors) {
     this.errors = errors
   }
 
   /**
    * Clear one or all error fields.
    *
-   * @param {string|null} field
+   * @param field
    */
   clear (field) {
     if (field) {
@@ -87,8 +92,10 @@ export default class Errors {
   /**
    * Clear all errors if no field parameter is provided
    * or clear only field if provided.
+   *
+   * @param field
    */
-  forget(field) {
+  forget (field) {
     this.clear(field)
   }
 }
