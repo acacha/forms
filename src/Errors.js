@@ -51,7 +51,7 @@ export default class Errors {
    * @returns {*}
    */
   get (field) {
-    if (this.has[field]) {
+    if (this.has(field)) {
       return this.errors[field][0]
     }
   }

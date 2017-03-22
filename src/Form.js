@@ -9,7 +9,6 @@ export default class Form {
    * @param fields
    */
   constructor (fields) {
-
     this.clearOnSubmit = false
 
     this.originalFields = fields
@@ -21,6 +20,40 @@ export default class Form {
     for (let field in fields) {
       this[field] = fields[field]
     }
+  }
+
+  /**
+   * Retrieve the field form.
+   *
+   * @param field
+   * @returns {*}
+   */
+  get (field) {
+    if (this.has(field)) {
+      return this[field]
+    }
+  }
+
+  /**
+   * Set the field value.
+   *
+   * @param field
+   * @param value
+   */
+  set (field, value) {
+    if (this.has(field)) {
+      this[field] = value
+    }
+  }
+
+  /**
+   * Check if a field exists on form
+   *
+   * @param field
+   * @returns {boolean}
+   */
+  has (field) {
+    return this.hasOwnProperty(field)
   }
 
   /**
@@ -148,6 +181,7 @@ export default class Form {
    * @returns {Promise}
    */
   submit (requesType, url) {
+    this.startProcessing()
     return new Promise((resolve, reject) => {
       axios[requesType](url, this.data())
         .then(response => {
