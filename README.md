@@ -19,12 +19,19 @@ import Form from 'acacha-forms'
 Then you can create any form object using constructor, for example a Register User form:
 
 ```javascript
-var form = new Form( { name: 'Sergi Tur', email: 'sergiturbadenas@gmail.com', password: '123456', password_confirmation: '123456', terms: 'true' } )
+let form = new Form( { name: 'Sergi Tur', email: 'sergiturbadenas@gmail.com', password: '123456', password_confirmation: '123456', terms: 'true' } )
 ```
 And the use form methods like post to submit form:
 
 ```javascript
-
+form.post('/register')
+  .then( response => {
+    console.log('Register done!')
+    //do what you need to do if register is ok
+  })
+  .catch( error => {
+    console.log('Register error!')
+  })
 ```
 
 # Form objects pattern
