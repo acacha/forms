@@ -2,10 +2,12 @@
   "name": "acacha-forms",
   "version": "0.1.2",
   "description": "Form Objects pattern implementation for Javascript",
-  "main": "src/Form.js",
+  "main": "dist/Form.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .js"
+    "lint": "eslint --ext .js",
+    "build": "babel src --presets babel-preset-es2015 --out-dir dist",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
