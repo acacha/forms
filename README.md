@@ -8,9 +8,24 @@ Form objects pattern implementation for Javascript.
 npm install acacha-forms --save
 ```
 
-# Use
+# Usage
 
-TODO
+After package installation you could user this package using ES6 import:
+
+```javascript
+import Form from 'acacha-forms'
+```
+
+Then you can create any form object using constructor, for example a Register User form:
+
+```javascript
+var form = new Form( { name: 'Sergi Tur', email: 'sergiturbadenas@gmail.com', password: '123456', password_confirmation: '123456', terms: 'true' } )
+```
+And the use form methods like post to submit form:
+
+```javascript
+
+```
 
 # Form objects pattern
 
