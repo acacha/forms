@@ -52,6 +52,9 @@ export default class Errors {
    */
   get (field) {
     if (this.has(field)) {
+      if (typeof this.errors[field] === 'string') {
+        return this.errors[field]
+      }
       return this.errors[field][0]
     }
   }
