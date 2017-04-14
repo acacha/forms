@@ -32,6 +32,12 @@ Then you can create any form object using constructor, for example a Register Us
 let form = new Form( { name: 'Sergi Tur', email: 'sergiturbadenas@gmail.com', password: '123456', password_confirmation: '123456', terms: 'true' } )
 ```
 
+You can also pass a [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) object to constructor:
+
+```javascript
+let form = new AcachaForm(new FormData(document.getElementById('registerForm')))
+```
+
 And then use form methods like post to submit form:
 
 ```javascript
@@ -89,38 +95,38 @@ See a full example using vue.js at **examples/node** folder.
 <body>
 ...
 
-        <form onsubmit="event.preventDefault(); register()" id="registerForm">
-            <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="Full name" name="name">
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+<form onsubmit="event.preventDefault(); register()" id="registerForm">
+    <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Full name" name="name">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="Email" name="email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Password" name="password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Retype password" name="confirmation_password">
+        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+    </div>
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="checkbox icheck">
+                <label>
+                    <input type="checkbox" name="terms"> I agree to the <a href="#">terms</a>
+                </label>
             </div>
-            <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="Email" name="email">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Password" name="password">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Retype password" name="confirmation_password">
-                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-            </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox" name="terms"> I agree to the <a href="#">terms</a>
-                        </label>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
-                </div>
-                <!-- /.col -->
-            </div>
-        </form>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+        </div>
+        <!-- /.col -->
+    </div>
+</form>
 ...
 
 <script src="../lib/acacha-forms.min.js"></script>
@@ -206,6 +212,16 @@ npm install
 node server.js
 ```
 
+## Node.js
+
+First remember to run the server example. Run the browser example typing:
+
+```bash
+cd examples/node
+npm install
+node index.js
+```
+
 ## Browser
 
 First remember to run the server example. Run the browser example typing:
@@ -238,7 +254,6 @@ More info about this pattern at:
 - https://laracasts.com/series/learn-vue-2-step-by-step/episodes/20
 - https://laracasts.com/series/learn-vue-2-step-by-step/episodes/21
 
-
 ## Other similar packages or software
 
 - https://github.com/laracasts/Vue-Forms
@@ -263,3 +278,4 @@ Inspired the creation of this package. Also [Laravel Spark](https://spark.larave
 - https://laracasts.com/series/learn-vue-2-step-by-step/episodes/21
 - https://github.com/laracasts/Vue-Forms
 - https://github.com/edstevo/laravel-vue-form
+- https://github.com/acacha/adminlte-laravel
