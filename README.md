@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://www.npmjs.com/package/acacha-forms"><img src="https://img.shields.io/npm/dm/acacha-forms.svg" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/acacha-forms"><img src="https://img.shields.io/npm/v/acacha-forms.svg" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/acacha-forms"><img src="https://img.shields.io/npm/l/acacha-forms.svg" alt="License"></a>
+</p>
+
 # Acacha forms
 
 Form objects pattern implementation for Javascript.
