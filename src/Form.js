@@ -1,3 +1,5 @@
+/* global FormData */
+
 import Errors from './Errors'
 
 import axios from 'axios'
@@ -9,6 +11,8 @@ export default class Form {
    * @param fields
    */
   constructor (fields) {
+    fields = this.convertFromFormData(fields)
+
     this.clearOnSubmit = false
 
     this.originalFields = fields
@@ -20,6 +24,23 @@ export default class Form {
     for (let field in fields) {
       this[field] = fields[field]
     }
+  }
+
+  /**
+   * Convert from FormData.
+   *
+   * @param fields
+   * @returns {*}
+   */
+  convertFromFormData (fields) {
+    if (fields instanceof FormData) {
+      var rv = {}
+      for (var pair of fields.entries()) {
+        if (pair[1] !== undefined) rv[pair[0]] = pair[1]
+      }
+      return rv
+    }
+    return fields
   }
 
   /**

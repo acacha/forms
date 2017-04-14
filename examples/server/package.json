@@ -1,0 +1,19 @@
+{
+  "name": "server-example-for-acacha-forms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Sergi Tur Badenas <sergiturbadenas@gmail.com> (http://acacha.org)",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.9.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acacha/forms.git"
+  }
+}

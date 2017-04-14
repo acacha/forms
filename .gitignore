@@ -2,3 +2,6 @@ node_modules/
 .idea/
 npm-debug.log
 dist/
+examples/browser/node_modules/
+examples/server/node_modules/
+examples/es6/node_modules/

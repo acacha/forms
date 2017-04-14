@@ -1,0 +1,206 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Pepe Pardo Jeans",
+      "email": "pepepardo@jeans.com",
+      "password": "supersecrethere"
+    },
+    {
+      "id": 2,
+      "name": "Pepa Parda Jeans",
+      "email": "pepaparda@jeans.com",
+      "password": "supersecret2here"
+    },
+    {
+      "name": "Sergi Tur",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "123456",
+      "password_confirmation": "123456",
+      "terms": "true",
+      "id": 3
+    },
+    {
+      "name": "Sergi Tur",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "123456",
+      "password_confirmation": "123456",
+      "terms": "true",
+      "id": 4
+    },
+    {
+      "name": "Sergi Tur",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "123456",
+      "password_confirmation": "123456",
+      "terms": "true",
+      "id": 5
+    },
+    {
+      "name": "Sergi Tur",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "123456",
+      "password_confirmation": "123456",
+      "terms": "true",
+      "id": 6
+    },
+    {
+      "name": "PEPE KJORASD ASD",
+      "email": "dsa@gmailasdads.com",
+      "password": "123456",
+      "password_confirmation": "123456",
+      "terms": "true",
+      "id": 7
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "confirmation_password": "",
+      "id": 8
+    },
+    {
+      "name": "PROVA",
+      "email": "",
+      "password": "",
+      "confirmation_password": "",
+      "id": 9
+    },
+    {
+      "name": "Berla",
+      "email": "asd@sdasad.es",
+      "password": "123456",
+      "confirmation_password": "13saddas",
+      "terms": "on",
+      "id": 10
+    },
+    {
+      "name": "sdasadsdasda",
+      "email": "",
+      "password": "",
+      "confirmation_password": "",
+      "id": 11
+    },
+    {
+      "name": "sdasadsdasda",
+      "email": "asdsadsda@dasas.es",
+      "password": "",
+      "confirmation_password": "",
+      "id": 12
+    },
+    {
+      "name": "sdasadsdasda",
+      "email": "asd@sdasad.es",
+      "password": "",
+      "confirmation_password": "",
+      "id": 13
+    },
+    {
+      "name": "sadsdasda",
+      "email": "asd@sdasad.es",
+      "password": "",
+      "confirmation_password": "",
+      "id": 14
+    },
+    {
+      "name": "asd",
+      "email": "asd@sdasad.es",
+      "password": "",
+      "confirmation_password": "",
+      "id": 15
+    },
+    {
+      "name": "Sergi Tur Badenas",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "prova",
+      "confirmation_password": "prova",
+      "terms": "on",
+      "id": 16
+    },
+    {
+      "name": "Sergi Tur Badenas",
+      "email": "sad@das.es",
+      "password": "",
+      "confirmation_password": "",
+      "id": 17
+    },
+    {
+      "name": "Sergi Tur Badenas",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "",
+      "confirmation_password": "",
+      "id": 18
+    },
+    {
+      "name": "sad",
+      "email": "asd@sdasad.es",
+      "password": "",
+      "confirmation_password": "",
+      "id": 19
+    },
+    {
+      "name": "dasdsa",
+      "email": "sa@das.es",
+      "password": "",
+      "password_confirmation": "",
+      "terms": "",
+      "id": 20
+    },
+    {
+      "name": "PROVA",
+      "email": "sdasdadsasdasdasda@dsa.es",
+      "password": "",
+      "password_confirmation": "",
+      "terms": true,
+      "id": 21
+    },
+    {
+      "name": "asd",
+      "email": "acacha@gmail.com",
+      "password": "",
+      "password_confirmation": "",
+      "terms": "",
+      "id": 22
+    },
+    {
+      "name": "Sergi Tur Badenas",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "",
+      "password_confirmation": "",
+      "terms": "",
+      "id": 23
+    },
+    {
+      "name": "Sergi Tur Badenas",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "",
+      "password_confirmation": "",
+      "terms": "",
+      "id": 24
+    },
+    {
+      "name": "Sergi Tur Badenas",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "",
+      "password_confirmation": "",
+      "terms": "",
+      "id": 25
+    },
+    {
+      "name": "Sergi Tur Badenas",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "",
+      "password_confirmation": "",
+      "terms": "",
+      "id": 26
+    },
+    {
+      "name": "asd",
+      "email": "asd@das.esa",
+      "password": "",
+      "password_confirmation": "",
+      "terms": "",
+      "id": 27
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "browser-example-for-acacha-forms",
+  "version": "1.0.0",
+  "description": "An example app to demonstrate acacha-forms library usage with browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergi Tur Badenas <sergiturbadenas@gmail.com> (http://acacha.org)",
+  "license": "ISC",
+  "dependencies": {
+    "admin-lte": "^2.3.11",
+    "bootstrap": "^3.3.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acacha/forms.git"
+  }
+}
