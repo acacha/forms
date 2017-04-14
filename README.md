@@ -19,7 +19,8 @@ Or you can use [unpkg](https://unpkg.com) in your html files:
 See also examples folder with full code examples
 
 ## ES6 imports
-After package installation you could user this package using ES6 import:
+
+After package installation you could use this package using ES6 import:
 
 ```javascript
 import Form from 'acacha-forms'
@@ -30,7 +31,8 @@ Then you can create any form object using constructor, for example a Register Us
 ```javascript
 let form = new Form( { name: 'Sergi Tur', email: 'sergiturbadenas@gmail.com', password: '123456', password_confirmation: '123456', terms: 'true' } )
 ```
-And the use form methods like post to submit form:
+
+And then use form methods like post to submit form:
 
 ```javascript
 form.post('/register')
@@ -43,35 +45,146 @@ form.post('/register')
     console.log(form.errors.all())
   })
 ```
+
+See a full example using vue.js at **examples/es6** folder.
 
 ## Node.js require
 
-After package installation you could user this package using ES6 import:
+After package installation you could use this package using require:
 
 ```javascript
-import Form from 'acacha-forms'
-```
+var AcachaForm = require('../lib/acacha-forms.min.js')
 
-Then you can create any form object using constructor, for example a Register User form:
+var API_URL = 'http://localhost:3000/users'
 
-```javascript
-let form = new Form( { name: 'Sergi Tur', email: 'sergiturbadenas@gmail.com', password: '123456', password_confirmation: '123456', terms: 'true' } )
-```
-And the use form methods like post to submit form:
+var form = new AcachaForm({
+  name: 'Sergi Tur',
+  email: 'sergiturbadenas@gmail.com',
+  password: '123456',
+  password_confirmation: '123456',
+  terms: 'true'
+})
 
-```javascript
-form.post('/register')
-  .then( response => {
+form.post(API_URL)
+  .then(response => {
     console.log('Register done!')
-    //do what you need to do if register is ok
   })
-  .catch( error => {
-    console.log('Register error!')
+  .catch(error => {
+    console.log('Register error! : ' + error)
     console.log(form.errors.all())
   })
+
 ```
 
+See a full example using vue.js at **examples/node** folder.
+
 ## Browser 
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    ...
+</head>
+<body>
+...
+
+        <form onsubmit="event.preventDefault(); register()" id="registerForm">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Full name" name="name">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="email" class="form-control" placeholder="Email" name="email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="Password" name="password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="Retype password" name="confirmation_password">
+                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox" name="terms"> I agree to the <a href="#">terms</a>
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+...
+
+<script src="../lib/acacha-forms.min.js"></script>
+<script src="./register.js"></script>
+</body>
+</html>
+
+```
+
+Where register.js:
+
+```javascript
+/* globals AcachaForm FormData $ */
+
+/**
+ * Submit register form.
+ *
+ * @param errors
+ */
+function register () { // eslint-disable-line no-unused-vars
+  clearErrors()
+
+  const API_URL = 'http://localhost:3000/users'
+
+  let form = new AcachaForm(new FormData(document.getElementById('registerForm')))
+
+  form.post(API_URL)
+    .then(response => {
+      console.log('Register done!')
+      $('#success').show()
+    })
+    .catch(error => {
+      console.log('Register error! : ' + error)
+      console.log(form.errors)
+      showErrors(form.errors.all())
+    })
+}
+
+/**
+ * Clear errors.
+ *
+ * @param errors
+ */
+function clearErrors (errors) {
+  $('#success').hide()
+  $('#errors').hide()
+  $('#errors ul').empty()
+}
+
+/**
+ * Show errors.
+ *
+ * @param errors
+ */
+function showErrors (errors) {
+  $.each(errors, function (index, value) {
+    $('#errors ul').append('<li>' + value + '</li>')
+  })
+  $('#errors').show()
+}
+
+```
+
+See a full example using vue.js at **examples/browser** folder. 
 
 # Examples
 
@@ -141,7 +254,6 @@ This video series:
 - https://laracasts.com/series/learn-vue-2-step-by-step/episodes/21
 
 Inspired the creation of this package. Also [Laravel Spark](https://spark.laravel.com/) . 
-
  
 # Resources
  
