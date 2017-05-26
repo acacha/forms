@@ -20,7 +20,7 @@
     "Javascript"
   ],
   "author": "Sergi Tur Badenas <sergiturbadenas@gmail.com> (http://acacha.org)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/acacha/forms/issues"
   },
