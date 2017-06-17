@@ -1,6 +1,6 @@
 {
   "name": "acacha-forms",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Form Objects pattern implementation for Javascript",
   "main": "dist/acacha-forms.js",
   "scripts": {
