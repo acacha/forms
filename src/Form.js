@@ -36,7 +36,7 @@ export default class Form {
    * @returns {*}
    */
   convertFromFormData (fields) {
-    if (! typeof window === 'undefined') {
+    if (!(typeof window === 'undefined')) {
       if (fields instanceof FormData) {
         var rv = {}
         for (var pair of fields.entries()) {
@@ -210,7 +210,7 @@ export default class Form {
   }
 
   /**
-   * Submit the form to the back-end api/server.
+   * Submit the form to the backend api/server.
    *
    * @param requesType
    * @param url
@@ -225,7 +225,7 @@ export default class Form {
           resolve(response)
         })
         .catch(error => {
-          this.onFail(error.response.data)
+          this.onFail(error)
           reject(error)
         })
     })
@@ -244,10 +244,10 @@ export default class Form {
    *
    * @param errors
    */
-  onFail (errors) {
-    this.errors.record(errors)
+  onFail (error) {
+    if (error.response.data) this.errors.record(error.response.data)
     this.finishProcessingOnErrors()
-    if (this.toastr) toastr.error(errors, 'Error')
+    if (this.toastr) toastr.error(error, 'Error')
   }
 
   /**

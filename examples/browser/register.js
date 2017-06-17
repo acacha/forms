@@ -10,7 +10,9 @@ function register () { // eslint-disable-line no-unused-vars
 
   const API_URL = 'http://localhost:3000/users'
 
-  let form = new AcachaForm(new FormData(document.getElementById('registerForm')))
+  let form = new AcachaForm(new FormData(document.getElementById('registerForm')),true)
+  // Without toastr on errors
+  // let form = new AcachaForm(new FormData(document.getElementById('registerForm')))
 
   form.post(API_URL)
     .then(response => {

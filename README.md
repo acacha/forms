@@ -239,7 +239,7 @@ cd ..
 http-server .
 ```
 
-An open index.html file in your favourite browser.
+An open browser/index.html file in your favourite browser.
 
 ## es6
 
@@ -255,13 +255,17 @@ And open URL http://localhost:8080
 
 # Optional. Toastr error messages  
 
+You can active to show [toastr](https://github.com/CodeSeven/toastr) errors activating second parameter on constructor:
 
+```javascript
+let form = new AcachaForm(new FormData(document.getElementById('registerForm')),true)
+```
 
+Then any error except 422 validation errors will show a Gritter/Toast with an error message.
 
 ***IMPORTANT***: Remember to add toastr.css to your project before using this option.
 
-
-
+See browser example to see how to import toastr js and css.
 
 # About Form objects pattern
 
