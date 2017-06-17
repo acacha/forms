@@ -201,6 +201,22 @@
       "password_confirmation": "",
       "terms": "",
       "id": 27
+    },
+    {
+      "name": "as",
+      "email": "sad@nova.com",
+      "password": "",
+      "password_confirmation": "",
+      "terms": "",
+      "id": 28
+    },
+    {
+      "name": "Sergi Tur",
+      "email": "sergiturbadenas@gmail.com",
+      "password": "123456",
+      "password_confirmation": "123456",
+      "terms": "true",
+      "id": 29
     }
   ]
 }

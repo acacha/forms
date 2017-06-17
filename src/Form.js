@@ -1,16 +1,17 @@
-/* global FormData */
+/* global FormData axios */
 
 import Errors from './Errors'
 
-import axios from 'axios'
+import toastr from 'toastr'
 
 export default class Form {
   /**
    * Constructor.
    *
    * @param fields
+   * @param toastr
    */
-  constructor (fields) {
+  constructor (fields, toastr = false) {
     fields = this.convertFromFormData(fields)
 
     this.clearOnSubmit = false
@@ -24,6 +25,8 @@ export default class Form {
     for (let field in fields) {
       this[field] = fields[field]
     }
+
+    this.toastr = toastr
   }
 
   /**
@@ -33,12 +36,14 @@ export default class Form {
    * @returns {*}
    */
   convertFromFormData (fields) {
-    if (fields instanceof FormData) {
-      var rv = {}
-      for (var pair of fields.entries()) {
-        if (pair[1] !== undefined) rv[pair[0]] = pair[1]
+    if (! typeof window === 'undefined') {
+      if (fields instanceof FormData) {
+        var rv = {}
+        for (var pair of fields.entries()) {
+          if (pair[1] !== undefined) rv[pair[0]] = pair[1]
+        }
+        return rv
       }
-      return rv
     }
     return fields
   }
@@ -49,7 +54,7 @@ export default class Form {
    * @param field
    * @returns {*}
    */
-  get (field) {
+  getField (field) {
     if (this.has(field)) {
       return this[field]
     }
@@ -61,7 +66,7 @@ export default class Form {
    * @param field
    * @param value
    */
-  set (field, value) {
+  setField (field, value) {
     if (this.has(field)) {
       this[field] = value
     }
@@ -242,6 +247,7 @@ export default class Form {
   onFail (errors) {
     this.errors.record(errors)
     this.finishProcessingOnErrors()
+    if (this.toastr) toastr.error(errors, 'Error')
   }
 
   /**

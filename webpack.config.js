@@ -8,6 +8,8 @@ if (isProd) {
   outputFile = 'acacha-forms.min.js'
 }
 
+var webpack = require('webpack');
+
 module.exports = {
   entry: './src/Form.js',
   output: {
@@ -38,5 +40,11 @@ module.exports = {
       loader: 'babel-loader'
     }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      axios: "axios",
+      "window.axios": "axios"
+    })
+  ]
 }

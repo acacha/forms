@@ -235,6 +235,8 @@ First remember to run the server example. Run the browser example typing:
 ```bash
 cd examples/browser
 npm install
+cd ..
+http-server .
 ```
 
 An open index.html file in your favourite browser.
@@ -250,6 +252,16 @@ npm run dev
 ```
 
 And open URL http://localhost:8080 
+
+# Optional. Toastr error messages  
+
+
+
+
+***IMPORTANT***: Remember to add toastr.css to your project before using this option.
+
+
+
 
 # About Form objects pattern
 
