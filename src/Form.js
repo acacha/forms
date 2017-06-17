@@ -155,6 +155,16 @@ export default class Form {
   }
 
   /**
+   * Send a GET request to the given URL.
+   *
+   * @param url
+   * @returns {*}
+   */
+  get (url) {
+    return this.submit('get', url)
+  }
+
+  /**
    * Send a POST request to the given URL.
    *
    * @param url
