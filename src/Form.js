@@ -228,7 +228,6 @@ export default class Form {
   submit (requestType, url) {
     this.startProcessing()
     return new Promise((resolve, reject) => {
-
       this.configureAxios()
       axios[requestType](url, this.data())
         .then(response => {
