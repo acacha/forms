@@ -2,7 +2,7 @@
   "name": "acacha-forms",
   "version": "0.1.9",
   "description": "Form Objects pattern implementation for Javascript",
-  "main": "dist/acacha-forms.js",
+  "main": "dist/acacha-forms.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js src/",

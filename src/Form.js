@@ -11,7 +11,7 @@ export default class Form {
    * @param fields
    * @param toastr
    */
-  constructor (fields, toastr = false) {
+  constructor (fields, toastr = false, debug = false) {
     fields = this.convertFromFormData(fields)
 
     this.clearOnSubmit = false
@@ -27,6 +27,8 @@ export default class Form {
     }
 
     this.toastr = toastr
+
+    this.debug = debug
   }
 
   /**
@@ -209,17 +211,27 @@ export default class Form {
     return this.submit('delete', url)
   }
 
+  configureAxios() {
+    axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+    //Get if exists CSRF TOKEN from HTML meta (as Laravel do)
+    let token = document.head.querySelector('meta[name="csrf-token"]')
+    if (token) axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content
+  }
+
   /**
    * Submit the form to the backend api/server.
    *
-   * @param requesType
+   * @param requestType
    * @param url
    * @returns {Promise}
    */
-  submit (requesType, url) {
+  submit (requestType, url) {
     this.startProcessing()
+
     return new Promise((resolve, reject) => {
-      axios[requesType](url, this.data())
+
+      this.configureAxios()
+      axios[requestType](url, this.data())
         .then(response => {
           this.onSuccess()
           resolve(response)
@@ -248,6 +260,24 @@ export default class Form {
     if (error.response.data) this.errors.record(error.response.data)
     this.finishProcessingOnErrors()
     if (this.toastr) toastr.error(error, 'Error')
+    if (this.debug) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        // The request was made but no response was received
+        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+        // http.ClientRequest in node.js
+        console.log(error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log('Error', error.message);
+      }
+      console.log(error.config);
+    }
   }
 
   /**
