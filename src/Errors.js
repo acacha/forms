@@ -5,6 +5,7 @@ export default class Errors {
   */
   constructor () {
     this.errors = {}
+    this.message = ''
   }
 
   /**
@@ -69,12 +70,31 @@ export default class Errors {
   }
 
   /**
+   * Set the raw errors for the collection without global message.
+   *
+   * @param errors
+   */
+  setErrors (errors) {
+    this.errors = errors
+  }
+
+  /**
+   * Record the new errors without global message.
+   *
+   * @param errors
+   */
+  recordErrors (errors) {
+    this.setErrors(errors)
+  }
+
+  /**
    * Set the raw errors for the collection.
    *
    * @param errors
    */
   set (errors) {
-    this.errors = errors
+    this.errors = errors.errors
+    this.message = errors.message
   }
 
   /**
