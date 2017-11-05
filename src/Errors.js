@@ -14,6 +14,7 @@ export default class Errors {
    * @returns {boolean}
    */
   any () {
+    if (typeof this.errors === 'undefined') return false
     return Object.keys(this.errors).length > 0
   }
 
