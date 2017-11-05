@@ -42,6 +42,7 @@ export default class Errors {
    * @returns {boolean}
    */
   has (field) {
+    if (typeof this.errors === 'undefined') return false
     return this.errors.hasOwnProperty(field)
   }
 
