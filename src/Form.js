@@ -102,7 +102,7 @@ export default class Form {
    * Activates form clearing/reset after submit.
    *
    */
-  clearOnSubmit () {
+  setClearOnSubmit () {
     this.clearOnSubmit = true
   }
 
