@@ -91,8 +91,8 @@ export default class Form {
   reset () {
     this.fields = {}
 
-    for (let field in this.originalFields) {
-      this[field] = ''
+    for (let [key,value] of Object.entries(this.originalFields)) {
+      this[key] = value
     }
 
     this.errors.clear()
