@@ -115,6 +115,8 @@ export default class Form {
     this.submitting = false
     this.submitted = false
     this.succeeded = false
+    this.disable_validation = false
+    this.disable_strict_validation = false
   }
 
   /**
@@ -129,8 +131,43 @@ export default class Form {
       data[field] = this[field]
     }
 
+    if (this.disable_validation) data['acacha_forms_disable_validation'] = true
+    if (this.disable_strict_validation) data['acacha_forms_disable_strict_validation'] = true
+
     return data
   }
+
+  /**
+   * Disable validation.
+   *
+   */
+  disableValidation () {
+    this.disable_validation = true
+  };
+
+  /**
+   * Enable validation.
+   *
+   */
+  enableValidation () {
+    this.disable_validation = false
+  };
+
+  /**
+   * Disable strict validation.
+   *
+   */
+  disableStrictValidation () {
+    this.disable_strict_validation = true
+  };
+
+  /**
+   * Enable strict validation.
+   *
+   */
+  enableStrictValidation () {
+    this.disable_strict_validation = false
+  };
 
   /**
    * Start processing the form.
