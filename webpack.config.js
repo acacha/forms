@@ -1,14 +1,13 @@
 const path = require('path')
+const webpack = require('webpack')
 
-var isProd = (process.env.NODE_ENV === 'production')
+let isProd = (process.env.NODE_ENV === 'production')
 
-var outputFile = 'acacha-forms.js'
+let outputFile = 'acacha-forms.js'
 
 if (isProd) {
   outputFile = 'acacha-forms.min.js'
 }
-
-var webpack = require('webpack')
 
 module.exports = {
   entry: './src/Form.js',
