@@ -2,9 +2,7 @@
 
 import Errors from './Errors'
 import store from './store'
-
 import FormsModule from './store/modules/forms'
-
 import toastr from 'toastr'
 
 export { Errors, store, FormsModule }
