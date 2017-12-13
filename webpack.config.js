@@ -8,7 +8,7 @@ if (isProd) {
   outputFile = 'acacha-forms.min.js'
 }
 
-var webpack = require('webpack');
+var webpack = require('webpack')
 
 module.exports = {
   entry: './src/Form.js',
@@ -43,8 +43,8 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      axios: "axios",
-      "window.axios": "axios"
+      axios: 'axios',
+      'window.axios': 'axios'
     })
   ]
 }
