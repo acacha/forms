@@ -2,7 +2,7 @@ import * as getters from './getters'
 import * as actions from './actions'
 import * as mutations from './mutations'
 
-import {CREATE_ACTION} from './constants.js'
+import {CREATE_ACTION} from '../../../Form'
 
 const namespaced = true
 

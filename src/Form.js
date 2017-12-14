@@ -1,11 +1,28 @@
 /* global FormData axios */
 
 import Errors from './Errors'
-import store from './store'
+import store from './store/index'
 import FormsModule from './store/modules/forms'
 import toastr from 'toastr'
+import ValidationMixin from './mixins/ValidationMixin'
+import ClearMixin from './mixins/ClearMixin'
+import ClearErrorsMixin from './mixins/ClearErrorsMixin'
+import LoadingMixin from './mixins/LoadingMixin'
 
-export { Errors, store, FormsModule }
+const CREATE_ACTION = 'create'
+const UPDATE_ACTION = 'update'
+
+export {
+  Errors,
+  store,
+  FormsModule,
+  CREATE_ACTION,
+  UPDATE_ACTION,
+  ValidationMixin,
+  ClearMixin,
+  ClearErrorsMixin,
+  LoadingMixin
+}
 
 export default class Form {
   /**
@@ -266,6 +283,7 @@ export default class Form {
    * @returns {Promise}
    */
   submit (requestType, url) {
+    console.log('SUBMIT!!!!!!!!!!!!!!!!!!!!!!!!!!')
     this.startProcessing()
     return new Promise((resolve, reject) => {
       this.configureAxios()

@@ -2,14 +2,15 @@
   "name": "acacha-forms",
   "version": "1.0.8",
   "description": "Form Objects pattern implementation for Javascript",
-  "main": "dist/acacha-forms.min.js",
+  "main": "dist/acacha-forms.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js src/",
     "lint-examples": "eslint --ext .js examples/node/index.js examples/server/*.js examples/browser/*.js",
     "build": "cross-env NODE_ENV=production webpack -p --progress --colors; cp dist/acacha-forms.min.js examples/lib",
     "dev": "cross-env NODE_ENV=development webpack --progress --colors --watch",
-    "prepublish": "npm run build"
+    "dev-no-watch": "cross-env NODE_ENV=development webpack --progress --colors",
+    "prepublish": "rimraf dist && npm run dev-no-watch && npm run build"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.1.1",
     "eslint-plugin-you-dont-need-lodash-underscore": "^5.0.4",
+    "rimraf": "^2.6.2",
     "webpack": "^2.3.3"
   },
   "dependencies": {

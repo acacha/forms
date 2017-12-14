@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
 import axios from 'axios'
-import {CREATE_ACTION} from './constants.js'
+import {CREATE_ACTION} from './Form'
 
 const debug = process.env.NODE_ENV !== 'production'
 

@@ -1,4 +1,4 @@
-import {CREATE_ACTION} from './constants.js'
+import {CREATE_ACTION} from '../../../Form'
 import axios from 'axios'
 
 export const enableValidationAction = ({commit}) => {
