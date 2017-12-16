@@ -19,6 +19,15 @@ export default class Errors {
   }
 
   /**
+   * Determine if we don't have errors.
+   *
+   * @returns {boolean}
+   */
+  empty () {
+    return !this.any()
+  }
+
+  /**
    * Determine if we have any errors.
    *
    * @returns {boolean}
@@ -107,6 +116,7 @@ export default class Errors {
   clear (field) {
     if (field) {
       if (typeof this.errors !== 'undefined') delete this.errors[field]
+      if (this.empty()) this.message = ''
       return
     }
 
