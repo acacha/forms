@@ -2,7 +2,7 @@ export default {
   methods: {
     clearErrors (fieldName) {
       if (!fieldName) return
-      this.$store.dispatch('acacha-forms/clearErrorAction', fieldName)
+      this.$store.dispatch(this.action('clearErrorAction'), fieldName)
     }
   }
 }

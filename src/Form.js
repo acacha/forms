@@ -8,6 +8,8 @@ import ValidationMixin from './mixins/ValidationMixin'
 import ClearMixin from './mixins/ClearMixin'
 import ClearErrorsMixin from './mixins/ClearErrorsMixin'
 import LoadingMixin from './mixins/LoadingMixin'
+import UsesAcachaForms from './mixins/UsesAcachaForms'
+import { registerForm } from './store/utils/registerForm'
 
 const CREATE_ACTION = 'create'
 const UPDATE_ACTION = 'update'
@@ -21,7 +23,9 @@ export {
   ValidationMixin,
   ClearMixin,
   ClearErrorsMixin,
-  LoadingMixin
+  LoadingMixin,
+  UsesAcachaForms,
+  registerForm
 }
 
 export default class Form {
