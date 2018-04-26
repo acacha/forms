@@ -317,7 +317,7 @@ export default class Form {
    * @param errors
    */
   onFail (error) {
-    if (error.response.data) this.errors.record(error.response.data)
+    if (error.response) if (error.response.data) this.errors.record(error.response.data)
     this.finishProcessingOnErrors()
     if (this.toastr) toastr.error(error, 'Error')
     if (this.debug) {
